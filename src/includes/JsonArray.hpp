@@ -19,7 +19,16 @@ namespace jsoncpp {
          * Creates an empty JsonArray.
          */
         JsonArray();
-        JsonArray(std::vector<JsonValue*> values);
+
+        /**
+         * Creates a JsonArray and stores values in it.
+         * @param values The values to store in the array.
+         */
+        explicit JsonArray(std::vector<JsonValue*> values);
+
+        /**
+         * @return A string json representation of the array.
+         */
         std::string toString() const override;
 
     };
