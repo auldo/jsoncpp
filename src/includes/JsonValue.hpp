@@ -28,7 +28,11 @@ namespace jsoncpp {
         /**
          * @param value The string to become a JsonValue.
          */
-        explicit JsonTextValue(std::string value) : value(std::move(value)) {}
+        explicit JsonTextValue(std::string value) {
+            value.erase(0, 1);
+            value.erase(value.size() - 1, 1);
+            this->value = value;
+        }
 
         /**
          * @return The string, that is JsonValue.
