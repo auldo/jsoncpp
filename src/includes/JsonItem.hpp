@@ -15,7 +15,6 @@ namespace jsoncpp {
         std::string key;
         JsonValue* value = nullptr;
     public:
-        JsonItem() = default;
         /**
          * Creates a new JsonItem.
          * @param key The item's key.
