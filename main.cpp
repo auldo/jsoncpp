@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "./src/reader.hpp"
+#include "includes/reader.hpp"
 
 int main() {
     std::cout << "Starting Application!" << std::endl;

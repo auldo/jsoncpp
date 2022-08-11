@@ -3,4 +3,4 @@ project(jsoncpp)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(jsoncpp main.cpp src/reader.hpp src/reader.cpp src/JsonItem.hpp src/JsonValue.hpp src/JsonItem.cpp src/JsonObject.hpp src/JsonObject.cpp src/JsonValue.cpp src/JsonArray.hpp src/JsonArray.cpp src/JsonStructure.hpp)
+add_executable(jsoncpp main.cpp includes/reader.hpp lib/reader.cpp includes/JsonItem.hpp includes/JsonValue.hpp lib/JsonItem.cpp includes/JsonObject.hpp lib/JsonObject.cpp lib/JsonValue.cpp includes/JsonArray.hpp lib/JsonArray.cpp includes/JsonStructure.hpp)
