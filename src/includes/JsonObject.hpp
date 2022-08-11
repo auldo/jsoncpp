@@ -12,7 +12,7 @@ namespace jsoncpp {
     /**
      * Represents a JsonObject that contains JsonItem key-value pairs.
      */
-    class JsonObject : public JsonValue, public JsonStructure {
+    class JsonObject : public JsonStructure {
 
     private:
         std::vector<JsonItem*> items;

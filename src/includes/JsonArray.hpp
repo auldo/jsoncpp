@@ -10,7 +10,7 @@ namespace jsoncpp {
     /**
      * Represents a JsonArray containing JsonValues (numeric, string, objects, arrays).
      */
-    class JsonArray : public JsonValue, public JsonStructure {
+    class JsonArray : public JsonStructure {
 
     private:
         std::vector<JsonValue*> values;

@@ -13,7 +13,8 @@ int main() {
     jsoncpp::util::remove_from_string(fileContent, ' ');
     std::cout << fileContent << std::endl;
 
-    jsoncpp::JsonObject* object = jsoncpp::readObject(fileContent, &values);
+    jsoncpp::JsonStructure* structure = jsoncpp::readStructure(fileContent, &values);
+    auto* object = dynamic_cast<jsoncpp::JsonObject*>(structure);
     std::cout << object->toString() << std::endl;
 
     return 0;
