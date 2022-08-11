@@ -3,19 +3,15 @@
 
 #include "includes/reader.hpp"
 
-int main() {
+int main(int argc, char *argv[]) {
     std::cout << "Starting Application!" << std::endl;
-
-    std::string fileName = "../test/res/test.json";
-    std::string fileContent = jsoncpp::util::read_file(fileName);
-
-    std::map<int, std::string> values = jsoncpp::store_values(fileContent);
-    jsoncpp::util::remove_from_string(fileContent, ' ');
-    std::cout << fileContent << std::endl;
-
-    jsoncpp::JsonStructure* structure = jsoncpp::readStructure(fileContent, &values);
-    auto* object = dynamic_cast<jsoncpp::JsonObject*>(structure);
-    std::cout << object->toString() << std::endl;
-
+    if(argc == 2) {
+        std::string fileName = argv[1];
+        jsoncpp::JsonStructure* structure = jsoncpp::readStructure(fileName);
+        std::cout << "Result:" << std::endl;
+        std::cout << structure->toString() << std::endl;
+    } else {
+        std::cout << "Please make sure there's only one argument - the path." << std::endl;
+    }
     return 0;
 }

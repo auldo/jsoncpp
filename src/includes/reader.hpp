@@ -114,11 +114,10 @@ namespace jsoncpp {
     JsonArray* readArray(std::string &representation, std::map<int,std::string>* lookup);
 
     /**
-     * Reads a JsonStructure and is the root method to call when reading a json string represented object.
-     * @param fileContent The file content representing either an object or an array.
-     * @param lookup The lookup table.
+     * Reads a json file and converts it into a json structure.
+     * @param fileName The name of the file containing the json.
      * @return The JsonStructure object.
      */
-    JsonStructure* readStructure(std::string &fileContent, std::map<int,std::string>* lookup);
+    JsonStructure* readStructure(const std::string& fileName);
 
 }

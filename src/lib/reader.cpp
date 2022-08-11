@@ -154,11 +154,14 @@ namespace jsoncpp {
         return new JsonArray(values);
     }
 
-    JsonStructure* readStructure(std::string &fileContent, std::map<int,std::string> *lookup) {
+    JsonStructure* readStructure(const std::string& fileName) {
+        std::string fileContent = util::read_file(fileName);
+        jsoncpp::util::remove_from_string(fileContent, ' ');
+        std::map<int, std::string> lookup = store_values(fileContent);
         if(fileContent.at(0) == '{')
-            return readObject(fileContent, lookup);
+            return readObject(fileContent, &lookup);
         if(fileContent.at(0) == '[')
-            return readArray(fileContent, lookup);
+            return readArray(fileContent, &lookup);
         else
             return nullptr;
     }
