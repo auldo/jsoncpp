@@ -15,5 +15,8 @@ int main() {
     jsoncpp::store_values(fileContent);
     std::cout << fileContent << std::endl;
 
+    jsoncpp::util::remove_from_string(fileContent, ' ');
+    std::cout << fileContent << std::endl;
+
     return 0;
 }

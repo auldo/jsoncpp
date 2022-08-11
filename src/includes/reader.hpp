@@ -27,6 +27,13 @@ namespace jsoncpp::util {
      * @return True, iff the char is contained within the string at least once.
      */
     bool string_contains(std::string &string, char c);
+
+    /**
+     * Removes all occurrences of a char from a string.
+     * @param string The string to shorten.
+     * @param c The char to remove.
+     */
+    void remove_from_string(std::string &string, char c);
 }
 
 namespace jsoncpp {

@@ -23,6 +23,17 @@ namespace jsoncpp::util {
         return false;
     }
 
+    void remove_from_string(std::string &string, char c) {
+        while(string_contains(string, c)) {
+            for(int i = 0; i < string.size(); i++){
+                if(string.at(i) == c) {
+                    string.erase(i, 1);
+                    break;
+                }
+            }
+        }
+    }
+
 }
 
 namespace jsoncpp {
